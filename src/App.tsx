@@ -1,17 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import LinkComponent from './LinkComponent';
-import LabelComponent from './LabelComponent';
+import LabelContainerComponent from './LabelContainerComponent';
+import Container from './Container';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <Container>
         <LinkComponent />
-        <LabelComponent />
-      </header>
+        <LabelContainerComponent />
+      </Container>
     </div>
   );
 }

@@ -1,13 +1,17 @@
 import { useState, useEffect } from 'react';
 import EventEmitter from './utils/EventEmitter';
-
+import Label from './Label';
+import { Events } from './events';
 
 type Log = {
+    id: number;
     text: string;
     created: Date;
 };
 
-export default function LabelComponent() {
+export default function LabelContainerComponent() {
+
+    const [logs, setLogs] = useState<Array<Log>>([]);
 
     useEffect(() => {
         const onNewLog = (log: Log) => {
@@ -24,11 +28,9 @@ export default function LabelComponent() {
         }
     }, []);
 
-    const [logs, setLogs] = useState<Array<Log>>([]);
-
     return (
         <div>
-            {logs && logs.map((Log: Log) => <div>{Log.text}</div>)}
+            {logs.map((Log: Log, index) => <Label key={index} log={Log}></Label>)}
         </div>
     )
 }

@@ -1,10 +1,14 @@
 import EventEmitter from './utils/EventEmitter';
+import { Events } from './events';
 
 export default function LinkComponent() {
 
+    let id = 0;
     const createNewLog = (e: any) : void =>  {
+        id++;
         EventEmitter.emit('NewLog', {
-            text: 'User saved',
+            id: id,
+            text: 'Log',
             created: new Date()
         });
     }
