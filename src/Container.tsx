@@ -22,7 +22,7 @@ const Container: React.FC<ContainerProps> = ({children}) => {
     }
 
     useEffect(() => {
-        const listener = EventEmitter.addListener('LogClicked', onLogClicked);
+        const listener = EventEmitter.addListener(Events.LogClicked, onLogClicked);
 
         return () => {
             listener.remove();

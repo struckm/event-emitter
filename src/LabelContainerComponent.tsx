@@ -21,7 +21,7 @@ export default function LabelContainerComponent() {
             ]))
         }
 
-        const listener = EventEmitter.addListener('NewLog', onNewLog);
+        const listener = EventEmitter.addListener(Events.NewLog, onNewLog);
 
         return () => {
             listener.remove();

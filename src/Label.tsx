@@ -16,7 +16,7 @@ interface LabelProps {
 const Label: React.FC<LabelProps> = ({log}) => {
 
     const onLogClick = (e: any) => {
-        EventEmitter.emit('LogClicked', log);
+        EventEmitter.emit(Events.LogClicked, log);
     }
 
     return (

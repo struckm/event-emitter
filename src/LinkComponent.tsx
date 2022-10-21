@@ -6,7 +6,7 @@ export default function LinkComponent() {
     let id = 0;
     const createNewLog = (e: any) : void =>  {
         id++;
-        EventEmitter.emit('NewLog', {
+        EventEmitter.emit(Events.NewLog, {
             id: id,
             text: 'Log',
             created: new Date()
